@@ -23,16 +23,15 @@ function createTabs(topic){
     return tab
 }
 
-
+// console.log(creatTabs())
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 .then( success =>{
     // console.log(success);
     success.data.topics.forEach(topic => {
-        // console.log(success);
-        topic.appendChild(creatTabs(topic))
+        topic.appendChild(createTabs(topic))
     })      
 })
-.catch(error => {
-    console.log(error)
+.catch(failure => {
+    // console.log(failure)
 })

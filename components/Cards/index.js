@@ -20,7 +20,7 @@
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
 // creating Markup for card using function 
-function createCard(article){
+function createCard(object){
     // creating elements
     const card = document.createElement('div')
     const headline = document.createElement('div')
@@ -41,9 +41,17 @@ function createCard(article){
     headline.classList.add('headline')
     author.classList.add('author')
     imgContainer.classList.add('img-container')
+    authorImage.src = object.authorPhoto
+
+    //setting content to the tags element 
+    headline.textContent = object.headline
+    authorNameSpan.textContent = `By ${object.authorName}`
 
 
+    return card
 }
+// console.log(createCard())
 
+const cardContainer = document.querySelector('cards-container')
 
 
