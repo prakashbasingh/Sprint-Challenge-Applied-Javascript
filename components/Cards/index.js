@@ -54,4 +54,42 @@ function createCard(object){
 
 const cardContainer = document.querySelector('cards-container')
 
+// creating article
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then( success =>{
+    // console.log(success)
+    // accessing all article
+    const articles = success.data.articles
+    // accessing each topics array of articles
+    const jsArticles = articles.javascript
+    const bootStrapArticles = articles.bootstrap
+    const techArticles = articles.technology
+    const jqueryArticles = articles.jquery
+    const nodeArticles = articles.node
+
+    // now iterating through each array and passing through new article
+    jsArticles.forEach(article =>{
+        cardsContainer.appendChild(creatCard(article))
+    })
+
+    bootStrapArticles.forEach(article =>{
+        cardsContainer.appendChild(creatCard(article))
+    })
+
+    techArticles.forEach(article =>{
+        cardContainer.appendChild(creatCard(article))
+    })
+
+    jqueryArticles.forEach(article =>{
+        cardContainer.appendChild(creatCard(article))
+    })
+
+    nodeArticles.foeEach(article =>{
+        cardContainer.appendChild(creatCard(article))
+    })
+
+})
+.catch(failure =>{
+    // console.log(failure)
+})
 
