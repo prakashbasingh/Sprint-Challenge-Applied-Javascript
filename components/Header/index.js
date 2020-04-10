@@ -12,19 +12,34 @@
 // and append it to the DOM inside the div.header-container
 
 // creating creating
-function Header() {
-    const headerDiv = document.createElement('div')
-    const spanFirst = document.createElement('span')
-    const headerH1 = document.createElement('h1')
-    const spanSecond = document.createElement('span')
-}
-// element nesting
-headerDiv.appendChild(spanFirst)
-headerDiv.appendChild(headerH1)
-headerDiv.appendChild(spanSecond)
+const headerContainer = document.querySelector('div .header-container')
 
-// adding class name
-headerDiv.classList.add('header')
-spamFirst.classList.add('date')
-spanSecond.classList.add('temp')
+function header1() {
+    const headerDiv = document.createElement('div')
+    const spanDate = document.createElement('span')
+    const h1 = document.createElement('h1')
+    const spanTemp = document.createElement('span')
+
+    // element nesting
+    headerDiv.appendChild(spanDate)
+    headerDiv.appendChild(h1)
+    headerDiv.appendChild(spanTemp)
+    headerContainer.appendChild(headerDiv)
+
+    // adding class name
+    headerDiv.classList.add('header')
+    spanDate.classList.add('date')
+    // h1.classList.add('headline')
+    spanTemp.classList.add('temp')
+
+
+    spanDate.textContent = 'SMARCH 28, 2019'
+    h1.textContent = 'Lambda Times'
+    spanTemp.textContent = '98'
+
+
+    return headerDiv
+}    
+
+// const header = header1()
 
