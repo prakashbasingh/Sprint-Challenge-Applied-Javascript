@@ -18,3 +18,32 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+// creating Markup for card using function 
+function createCard(article){
+    // creating elements
+    const card = document.createElement('div')
+    const headline = document.createElement('div')
+    const author = document.createElement('div')
+    const imgContainer = document.createElement('div')
+    const authorImage = document.createElement('img')
+    const authorNameSpan = document.createElement('span')
+
+    //structuring the elements
+    card.appendChild(headline)
+    card.appendChild(author)
+    author.appendChild(imgContainer)
+    imgContainer.appendChild(authorImage)
+    author.appendChild(authorNameSpan)
+
+    //giving class name/attributes
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgContainer.classList.add('img-container')
+
+
+}
+
+
+
