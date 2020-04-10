@@ -22,6 +22,7 @@
 // creating Markup for card using function 
 function createCard(object){
     // creating elements
+    
     const card = document.createElement('div')
     const headline = document.createElement('div')
     const author = document.createElement('div')
@@ -52,40 +53,41 @@ function createCard(object){
 }
 // console.log(createCard())
 
-const cardContainer = document.querySelector('cards-container')
+const cardContainer = document.querySelector('.cards-container')
 
 // creating article
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then( success =>{
-    // console.log(success)
-    // accessing all article
-    const articles = success.data.articles
+    // console.log(success) //to check data are acceced through link
+    
+    const articlesData = success.data.articles // creating "articlesData" variables and storing data collected through link
+    
     // accessing each topics array of articles
-    const jsArticles = articles.javascript
-    const bootStrapArticles = articles.bootstrap
-    const techArticles = articles.technology
-    const jqueryArticles = articles.jquery
-    const nodeArticles = articles.node
+    // const jsArticles = articles.javascript
+    // const bootStrapArticles = articles.bootstrap
+    // const techArticles = articles.technology
+    // const jqueryArticles = articles.jquery
+    // const nodeArticles = articles.node
 
     // now iterating through each array and passing through new article
-    jsArticles.forEach(article =>{
-        cardsContainer.appendChild(creatCard(article))
+    articlesData.JavaScripts.forEach(article =>{
+        cardsContainer.appendChild(creatCard(article.headline, article.authorPhoto, article.authorName))
     })
 
-    bootStrapArticles.forEach(article =>{
-        cardsContainer.appendChild(creatCard(article))
+    articlesData.bootStrap.forEach(article =>{
+        cardsContainer.appendChild(creatCard(article.headline, article.authorPhoto, article.authorName))
     })
 
-    techArticles.forEach(article =>{
-        cardContainer.appendChild(creatCard(article))
+    articlesData.technology.forEach(article =>{
+        cardContainer.appendChild(creatCard(article.headline, article.authorPhoto, article.authorName))
     })
 
-    jqueryArticles.forEach(article =>{
-        cardContainer.appendChild(creatCard(article))
+    articlesData.jquery.forEach(article =>{
+        cardContainer.appendChild(creatCard(article.headline, article.authorPhoto, article.authorName))
     })
 
-    nodeArticles.foeEach(article =>{
-        cardContainer.appendChild(creatCard(article))
+    articlesData.node.foeEach(article =>{
+        cardContainer.appendChild(creatCard(article.headline, article.authorPhoto, article.authorName))
     })
 
 })

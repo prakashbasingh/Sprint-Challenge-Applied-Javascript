@@ -14,6 +14,7 @@
 // creating creating
 
 function makeHeader() {
+    const headerContainer = document.querySelector('.header-container')
     const headerDiv = document.createElement('div')
     const spanDate = document.createElement('span')
     const titleH1 = document.createElement('h1')
@@ -23,6 +24,7 @@ function makeHeader() {
     headerDiv.appendChild(spanDate)
     headerDiv.appendChild(titleH1)
     headerDiv.appendChild(spanTemp)
+    headerContainer.appendChild(headerDiv)
 
     // adding class name
     headerDiv.classList.add('header')
@@ -32,14 +34,13 @@ function makeHeader() {
     //setting content to the tag element
     spanDate.textContent = 'MARCH 28, 2019'
     titleH1.textContent = 'Lambda Times'
-    spanTemp.textContent = '98'
+    spanTemp.textContent = '98°'
 
     return headerDiv
 }    
-// console.log(makeHeader()) 
+
+makeHeader()
 
 
-const headerContainer = document.querySelector('.header-container')
-headerContainer.appendChild(makeHeader())
 
 

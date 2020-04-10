@@ -22,8 +22,9 @@ function createTab(topic){
 
     return tab
 }
+topicDiv
 
-// console.log(creatTabs())
+console.log(creatTabs())
 
 const topicsDiv = document.querySelector('.topics')     //creating "topicsDiv"variable for the".topics div"
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
